@@ -1695,6 +1695,25 @@ div[data-testid="column"] {
 </style>
 """, unsafe_allow_html=True)
 
+.footer-contact {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.footer-contact a {
+    color: #276b0f;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
 def redondear_hora_actual():
     ahora = datetime.now(TZ)
 
