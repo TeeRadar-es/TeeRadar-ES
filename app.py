@@ -2095,3 +2095,14 @@ with col2:
         ),
         unsafe_allow_html=True
     )
+    st.markdown(
+    """
+    <div class="footer-contact">
+        ¿Tienes sugerencias o has encontrado algún problema?<br>
+        📧 <a href="mailto:teeradar.es@gmail.com">
+        teeradar.es@gmail.com
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True
+    )
