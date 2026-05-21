@@ -2277,23 +2277,23 @@ if st.button("Buscar", type="primary"):
         unsafe_allow_html=True
     )
             
-        resultados, campos_no_consultables = buscar_teetimes(
-            fecha_api,
-            hora_inicio_api,
-            hora_fin_api,
-            jugadores,
-            filtro_hoyos,
-            filtro_tipo,
-            campos_seleccionados_debug,
-            lat_ref,
-            lon_ref,
-            radio_km,
-            origen_cache
-        )
-    
-        st.session_state.resultados_busqueda = resultados
-        st.session_state.campos_no_consultables_busqueda = campos_no_consultables
-        st.session_state.busqueda_realizada = True
+    resultados, campos_no_consultables = buscar_teetimes(
+        fecha_api,
+        hora_inicio_api,
+        hora_fin_api,
+        jugadores,
+        filtro_hoyos,
+        filtro_tipo,
+        campos_seleccionados_debug,
+        lat_ref,
+        lon_ref,
+        radio_km,
+        origen_cache
+    )
+
+    st.session_state.resultados_busqueda = resultados
+    st.session_state.campos_no_consultables_busqueda = campos_no_consultables
+    st.session_state.busqueda_realizada = True
 
     placeholder.empty()
 
