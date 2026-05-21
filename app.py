@@ -2266,7 +2266,16 @@ if st.button("Buscar", type="primary"):
         st.error("La hora fin debe ser posterior a la hora inicio.")
         st.stop()
 
-    with st.spinner("🏌️ Buscando salidas disponibles..."):
+    placeholder = st.empty()
+
+    placeholder.markdown(
+        """
+        <div style='text-align:center; padding:30px;'>
+            <h3>🏌️ Buscando salidas disponibles...</h3>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
             
         resultados, campos_no_consultables = buscar_teetimes(
             fecha_api,
@@ -2285,6 +2294,8 @@ if st.button("Buscar", type="primary"):
         st.session_state.resultados_busqueda = resultados
         st.session_state.campos_no_consultables_busqueda = campos_no_consultables
         st.session_state.busqueda_realizada = True
+
+    placeholder.empty()
 
 if st.session_state.busqueda_realizada:
     resultados = st.session_state.resultados_busqueda
