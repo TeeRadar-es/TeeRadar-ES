@@ -2266,25 +2266,25 @@ if st.button("Buscar", type="primary"):
         st.error("La hora fin debe ser posterior a la hora inicio.")
         st.stop()
 
-        with st.spinner("🏌️ Buscando salidas disponibles..."):
+    with st.spinner("🏌️ Buscando salidas disponibles..."):
             
-    resultados, campos_no_consultables = buscar_teetimes(
-        fecha_api,
-        hora_inicio_api,
-        hora_fin_api,
-        jugadores,
-        filtro_hoyos,
-        filtro_tipo,
-        campos_seleccionados_debug,
-        lat_ref,
-        lon_ref,
-        radio_km,
-        origen_cache
-    )
-
-    st.session_state.resultados_busqueda = resultados
-    st.session_state.campos_no_consultables_busqueda = campos_no_consultables
-    st.session_state.busqueda_realizada = True
+        resultados, campos_no_consultables = buscar_teetimes(
+            fecha_api,
+            hora_inicio_api,
+            hora_fin_api,
+            jugadores,
+            filtro_hoyos,
+            filtro_tipo,
+            campos_seleccionados_debug,
+            lat_ref,
+            lon_ref,
+            radio_km,
+            origen_cache
+        )
+    
+        st.session_state.resultados_busqueda = resultados
+        st.session_state.campos_no_consultables_busqueda = campos_no_consultables
+        st.session_state.busqueda_realizada = True
 
 if st.session_state.busqueda_realizada:
     resultados = st.session_state.resultados_busqueda
