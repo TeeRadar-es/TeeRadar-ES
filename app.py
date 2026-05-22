@@ -194,7 +194,7 @@ def ejecutar_select_supabase(tabla, columnas, ordenar_por=None, page_size=1000):
     return registros
 
 
-@st.cache_data(ttl=300)
+@st.cache_data(ttl=0)
 def cargar_localidades():
     """
     Carga municipios, provincias y zonas desde Supabase.
@@ -465,7 +465,7 @@ def obtener_cliente_supabase():
     )
 
 
-@st.cache_data(ttl=300)
+@st.cache_data(ttl=0)
 def cargar_mapa_camposgolf_db():
     """
     Devuelve un diccionario nombre normalizado -> campo_id real en BD.
