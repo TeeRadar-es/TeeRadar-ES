@@ -2397,7 +2397,7 @@ with st.container(border=True):
 
     with col_localidad:
         localidad_seleccionada = st.selectbox(
-            "Localidad",
+            "📍 Buscar alrededor de",
             options=lista_localidades,
             index=None,
             placeholder="Selecciona una localidad"
