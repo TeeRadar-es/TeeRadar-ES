@@ -247,7 +247,7 @@ def cargar_campos(solo_activos=True):
 
         campos_metodos_db = ejecutar_select_supabase(
             "camposgolf_metodos",
-            "campo_metodo_id,campo_id,metodo_id,url_api,url_origen_api,id_vendor,id_vendor_proveedor,id_club,id_agente,area,activo_fl"
+            "campo_metodo_id,campo_id,metodo_id,url_api,url_origen_api,id_vendor,id_vendor_proveedor,id_club,id_agente,area,activo_fl",
             ordenar_por="campo_metodo_id"
         )
 
