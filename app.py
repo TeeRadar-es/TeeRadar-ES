@@ -174,12 +174,6 @@ def obtener_metodos_activos(campo):
 
 
 def obtener_url_reserva(campo, metodo=None):
-    """
-    Devuelve la URL de reservas priorizando la configurada para el método.
-    Si el método no tiene URL propia, usa la URL general del campo.
-    """
-    if metodo and metodo.get("url_reserva"):
-        return metodo.get("url_reserva")
     return campo.get("url_reserva")
 
 
@@ -219,7 +213,6 @@ def mapear_metodo_db(campo_metodo, metodo_reserva):
         "metodo_cd": metodo_cd,
         "proveedor": (metodo_reserva or {}).get("proveedor"),
         "descripcion": (metodo_reserva or {}).get("descripcion"),
-        "url_reserva": campo_metodo.get("url_reserva"),
         "url_api": campo_metodo.get("url_api"),
         "url_origen_api": campo_metodo.get("url_origen_api"),
         "id_vendor": campo_metodo.get("id_vendor"),
@@ -254,7 +247,7 @@ def cargar_campos(solo_activos=True):
 
         campos_metodos_db = ejecutar_select_supabase(
             "camposgolf_metodos",
-            "campo_metodo_id,campo_id,metodo_id,url_reserva,url_api,url_origen_api,id_vendor,id_vendor_proveedor,id_club,id_agente,area,activo_fl",
+            "campo_metodo_id,campo_id,metodo_id,url_api,url_origen_api,id_vendor,id_vendor_proveedor,id_club,id_agente,area,activo_fl"
             ordenar_por="campo_metodo_id"
         )
 
